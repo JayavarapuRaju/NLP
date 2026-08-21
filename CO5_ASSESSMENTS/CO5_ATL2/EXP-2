@@ -1,0 +1,22 @@
+# Text Coherence Analysis
+sentences = [
+    "The roads were flooded after heavy rainfall.",
+    "Therefore, schools were closed for the day.",
+    "Students attended classes online."
+]
+relations = [
+    "Cause-Effect",
+    "Sequence / Result"
+]
+print("Discourse Relations:\n")
+print(sentences[0])
+print("       ↓", relations[0])
+print(sentences[1])
+print("       ↓", relations[1])
+print(sentences[2])
+#OUTPUT
+The roads were flooded after heavy rainfall.
+       ↓ Cause-Effect
+Therefore, schools were closed for the day.
+       ↓ Sequence / Result
+Students attended classes online.
