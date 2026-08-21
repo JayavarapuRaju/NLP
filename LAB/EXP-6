@@ -1,0 +1,32 @@
+from collections import defaultdict
+import random
+
+text = """
+the student is studying python
+the student is learning nlp
+python is useful
+"""
+
+words = text.lower().split()
+
+bigrams = defaultdict(list)
+
+for i in range(len(words) - 1):
+    bigrams[words[i]].append(words[i + 1])
+
+word = "the"
+
+print("Generated Text:")
+
+for i in range(10):
+
+    print(word, end=" ")
+
+    if word in bigrams:
+        word = random.choice(bigrams[word])
+    else:
+        break
+
+
+#OUTPUT
+the student is studying python
