@@ -1,0 +1,18 @@
+from openai import OpenAI
+
+client = OpenAI(
+    api_key="YOUR_API_KEY"
+)
+
+prompt = "Write a short paragraph about artificial intelligence."
+
+response = client.responses.create(
+    model="gpt-4.1-mini",
+    input=prompt
+)
+
+print(response.output_text)
+#OUTPUT
+Artificial Intelligence is a branch of computer science that
+enables machines to perform tasks that normally require human
+intelligence, such as learning, reasoning, and decision making.
