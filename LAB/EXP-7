@@ -1,0 +1,14 @@
+import nltk
+
+sentence = "The student is studying"
+
+words = nltk.word_tokenize(sentence)
+
+tags = nltk.pos_tag(words)
+
+print(tags)
+#OUTPUT
+[('The', 'DT'),
+ ('student', 'NN'),
+ ('is', 'VBZ'),
+ ('studying', 'VBG')]
