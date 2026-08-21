@@ -1,0 +1,16 @@
+text = "Ravi met Arun at the library. He borrowed a book and later returned it."
+# Identified antecedents
+person = "Ravi"
+object_name = "book"
+# Replace pronouns
+resolved_text = text.replace("He", person)
+resolved_text = resolved_text.replace("it", "the " + object_name)
+print("Original Text:")
+print(text)
+print("\nResolved Discourse:")
+print(resolved_text)
+#OUTPUT
+Original Text:
+Ravi met Arun at the library. He borrowed a book and later returned it.
+Resolved Discourse:
+Ravi met Arun at the library. Ravi borrowed a book and later returned the book.
