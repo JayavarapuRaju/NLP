@@ -1,0 +1,29 @@
+import nltk
+
+grammar = nltk.CFG.fromstring("""
+S -> NP VP
+NP -> DT NN
+VP -> VBZ JJ
+DT -> 'The'
+NN -> 'student'
+VBZ -> 'is'
+JJ -> 'smart'
+""")
+
+parser = nltk.ChartParser(grammar)
+
+sentence = "The student is smart".split()
+
+for tree in parser.parse(sentence):
+
+    for subtree in tree.subtrees():
+
+        if subtree.label() == "NP":
+
+            noun_phrase = " ".join(subtree.leaves())
+
+            print("Noun Phrase:", noun_phrase)
+            print("Meaning: Subject or Entity")
+#OUTPUT
+Noun Phrase: The student
+Meaning: Subject or Entity
