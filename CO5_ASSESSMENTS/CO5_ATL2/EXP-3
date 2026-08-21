@@ -1,0 +1,30 @@
+# Dialogue Act Identification
+conversation = [
+    "Can you book a train ticket for me?",
+    "Sure, where would you like to travel?",
+    "I want to go to Chennai.",
+    "Your ticket has been booked."
+]
+dialogue_acts = [
+    "Request",
+    "Question",
+    "Inform",
+    "Action / Confirmation"
+]
+print("Dialogue Act Sequence:\n")
+for sentence, act in zip(conversation, dialogue_acts):
+    print("Utterance:", sentence)
+    print("Dialogue Act:", act)
+    print()
+#OUTPUT
+Utterance: Can you book a train ticket for me?
+Dialogue Act: Request
+
+Utterance: Sure, where would you like to travel?
+Dialogue Act: Question
+
+Utterance: I want to go to Chennai.
+Dialogue Act: Inform
+
+Utterance: Your ticket has been booked.
+Dialogue Act: Action / Confirmation
