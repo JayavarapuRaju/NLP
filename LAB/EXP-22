@@ -1,0 +1,16 @@
+text = """
+Ravi met Arun.
+He borrowed a book.
+He returned it.
+"""
+
+last_person = "Arun"
+last_object = "book"
+
+print("Ravi met Arun.")
+print(last_person, "borrowed a", last_object + ".")
+print(last_person, "returned the", last_object + ".")
+#OUTPUT
+Ravi met Arun.
+Arun borrowed a book.
+Arun returned the book.
