@@ -1,0 +1,18 @@
+from transformers import pipeline
+
+translator = pipeline(
+    "translation_en_to_fr",
+    model="Helsinki-NLP/opus-mt-en-fr"
+)
+
+text = "I am learning Natural Language Processing."
+
+result = translator(text)
+
+print(
+    "French Translation:",
+    result[0]["translation_text"]
+)
+#OUTPUT
+French Translation:
+J'apprends le traitement du langage naturel.
