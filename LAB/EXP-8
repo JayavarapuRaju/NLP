@@ -1,0 +1,33 @@
+from collections import defaultdict, Counter
+
+training_data = [
+    [("I", "PRP"), ("eat", "VBP"), ("rice", "NN")],
+    [("You", "PRP"), ("eat", "VBP"), ("food", "NN")]
+]
+
+word_tags = defaultdict(Counter)
+
+for sentence in training_data:
+    for word, tag in sentence:
+        word_tags[word.lower()][tag] += 1
+
+
+def tag_sentence(sentence):
+
+    result = []
+
+    for word in sentence.split():
+
+        if word.lower() in word_tags:
+            tag = word_tags[word.lower()].most_common(1)[0][0]
+        else:
+            tag = "NN"
+
+        result.append((word, tag))
+
+    return result
+#OUTPUT
+[('I', 'PRP'), ('eat', 'VBP'), ('rice', 'NN')]
+
+
+print(tag_sentence("I eat rice"))
