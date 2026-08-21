@@ -1,0 +1,26 @@
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+
+documents = [
+    "Natural language processing",
+    "Machine learning and artificial intelligence",
+    "Python programming language"
+]
+
+query = "machine learning"
+
+vectorizer = TfidfVectorizer()
+
+matrix = vectorizer.fit_transform(documents)
+
+query_vector = vectorizer.transform([query])
+
+scores = cosine_similarity(query_vector, matrix)
+
+index = scores[0].argmax()
+
+print("Most Relevant Document:")
+print(documents[index])
+#OUTPUT
+Most Relevant Document:
+Machine learning and artificial intelligence
