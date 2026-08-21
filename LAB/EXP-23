@@ -1,0 +1,28 @@
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+
+sentences = [
+    "Python is a programming language",
+    "Python is used in machine learning",
+    "Machine learning uses data"
+]
+
+vectorizer = TfidfVectorizer()
+
+matrix = vectorizer.fit_transform(sentences)
+
+score1 = cosine_similarity(
+    matrix[0],
+    matrix[1]
+)[0][0]
+
+score2 = cosine_similarity(
+    matrix[1],
+    matrix[2]
+)[0][0]
+
+average = (score1 + score2) / 2
+
+print("Coherence Score:", round(average, 2))
+#OUTPUT
+Coherence Score: 0.18
