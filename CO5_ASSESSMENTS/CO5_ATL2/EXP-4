@@ -1,0 +1,26 @@
+# Semantic Representation
+
+semantic_input = {
+    "Action": "Buy",
+    "Agent": "Student",
+    "Object": "Book",
+    "Tense": "Past"
+}
+
+# Convert action into past tense
+past_tense = {
+    "Buy": "bought"
+}
+
+subject = "The " + semantic_input["Agent"].lower()
+verb = past_tense[semantic_input["Action"]]
+object_name = "a " + semantic_input["Object"].lower()
+
+# Generate sentence
+sentence = subject + " " + verb + " " + object_name + "."
+
+print("Generated Sentence:")
+print(sentence)
+#OUTPUT
+Generated Sentence:
+The student bought a book.
