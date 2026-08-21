@@ -1,0 +1,25 @@
+def dialog_act(sentence):
+
+    sentence = sentence.lower()
+
+    if sentence.endswith("?"):
+        return "Question"
+
+    elif "hello" in sentence or "hi" in sentence:
+        return "Greeting"
+
+    elif "thank" in sentence:
+        return "Thanking"
+
+    elif "bye" in sentence:
+        return "Closing"
+
+    else:
+        return "Statement"
+
+
+text = "Hello, how are you?"
+
+print("Dialog Act:", dialog_act(text))
+#OUTPUT
+Dialog Act: Question
