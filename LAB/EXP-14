@@ -1,0 +1,20 @@
+def check_agreement(sentence):
+
+    words = sentence.lower().split()
+
+    subject = words[0]
+    verb = words[1]
+
+    if subject == "he" and verb == "runs":
+        return "Agreement Correct"
+
+    elif subject == "they" and verb == "run":
+        return "Agreement Correct"
+
+    else:
+        return "Agreement Incorrect"
+
+
+print(check_agreement("He runs"))
+#OUTPUT
+Agreement Correct
