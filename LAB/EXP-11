@@ -1,0 +1,38 @@
+grammar = {
+    "S": [["NP", "VP"]],
+    "NP": [["John"]],
+    "VP": [["runs"]]
+}
+
+
+def parse(symbol, words):
+
+    if symbol not in grammar:
+        if words and words[0] == symbol:
+            return words[1:]
+        return None
+
+    for rule in grammar[symbol]:
+        remaining = words[:]
+
+        for part in rule:
+            remaining = parse(part, remaining)
+
+            if remaining is None:
+                break
+
+        else:
+            return remaining
+
+    return None
+
+
+sentence = ["John", "runs"]
+
+if parse("S", sentence) == []:
+    print("Sentence Accepted")
+else:
+    print("Sentence Rejected")
+
+#OUTPUT
+Sentence Accepted
