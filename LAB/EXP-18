@@ -1,0 +1,18 @@
+import re
+
+expression = "Human(Socrates)"
+
+pattern = r"(\w+)\((\w+)\)"
+
+match = re.match(pattern, expression)
+
+if match:
+    print("Valid FOPC Expression")
+    print("Predicate:", match.group(1))
+    print("Argument:", match.group(2))
+else:
+    print("Invalid Expression")
+#OUTPUT
+Valid FOPC Expression
+Predicate: Human
+Argument: Socrates
