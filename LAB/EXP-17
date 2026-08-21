@@ -1,0 +1,16 @@
+from nltk.corpus import wordnet
+
+word = "bank"
+
+synsets = wordnet.synsets(word)
+
+for synset in synsets[:3]:
+    print("Synset:", synset.name())
+    print("Meaning:", synset.definition())
+
+#OUTPUT
+Synset: bank.n.01
+Meaning: sloping land beside a body of water
+
+Synset: depository_financial_institution.n.01
+Meaning: a financial institution that accepts deposits
