@@ -1,0 +1,17 @@
+import nltk
+from nltk.tag import RegexpTagger
+
+patterns = [
+    (r'.*ing$', 'VBG'),
+    (r'.*ed$', 'VBD'),
+    (r'.*ly$', 'RB'),
+    (r'.*', 'NN')
+]
+
+tagger = RegexpTagger(patterns)
+
+words = nltk.word_tokenize("running quickly")
+
+print(tagger.tag(words))
+#OUTPUT
+[('running', 'VBG'), ('quickly', 'RB')]
